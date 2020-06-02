@@ -1,0 +1,19 @@
+{
+    "private": true,
+    "name": "jwt-auth",
+    "workspaces": {
+        "packages": ["packages/*"],
+        "nohoist": [
+            "**/typeorm",
+            "**/typeorm/**"
+        ]
+    },
+    "scripts": {
+        "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+        "client": "yarn workspace client start",
+        "server": "yarn workspace server start"
+    },
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+}
