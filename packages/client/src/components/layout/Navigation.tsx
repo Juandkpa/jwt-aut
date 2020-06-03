@@ -15,6 +15,9 @@ export const Navigation : React.FC<Props> = () =>{
             <div>
                 <Link to="/login">Login</Link>
             </div>
+            <div>
+                <Link to="/Bye">Bye</Link>
+            </div>
         </header>
     )
 }
