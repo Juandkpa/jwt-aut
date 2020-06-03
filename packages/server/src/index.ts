@@ -30,12 +30,15 @@ import { sendRefreshToken } from "./sendRefreshToken";
         } catch(error) {
             console.log(error);
             return res.send({ ok: false, accessToken: "" });
-
         }
 
         const user = await User.findOne({ id: payload.userId });
 
         if (!user) return res.send({ ok: false, accessToken: "" });
+
+        if (user.tokenVersion !== payload.tokenVersion) {
+            return res.send({ ok: false, accessToken: ''});
+        }
 
         sendRefreshToken(res, createRefreshToken(user));
 
