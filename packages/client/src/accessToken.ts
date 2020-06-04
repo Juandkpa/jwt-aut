@@ -1,9 +1,9 @@
-let accessToken:String = '';
+let accessToken:string = '';
 
-export const setAccessToken = (s:String) => {
+export const setAccessToken = (s:string) => {
     accessToken = s;
 }
 
-export const getAccessToken = ():String => {
+export const getAccessToken = ():string => {
     return accessToken;
 }
